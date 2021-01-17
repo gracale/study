@@ -3,6 +3,7 @@
 2. CSS构建CSS树
 3. 合并成一颗渲染树
 4. Layout-Paint-Compose依次进行
+***
 transition
 ```css
 #heart{
