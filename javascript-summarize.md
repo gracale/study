@@ -13,7 +13,8 @@
 
 JavaScript的诞生
 ```
-必须蹭Java流量
+诞生于网景
+老板要求必须蹭Java流量
 名字mocha->LiveScript->JavaScript
 布莱登用十天就做成了
 浏览器刚开始同时支持java和javascript
@@ -58,3 +59,26 @@ JavaScript的兴起
 jQuery强在哪？能同时兼容IE和Firefox。
 所以IE不行了jQuery热度也有所下降
 ```
+中国的前端发展
+* 来源
+1. 后端转前端
+2. 设计师转前端
+* 缺人
+1. 大学不教前端
+2. 早期前端工资比不上后端，所以科班多半做后端
+~~哦我也是科班啊，个人项目都没写过的屑科班~~<br>
+
+JavaScript的爆发
+```
+Chrome的JS引擎叫V8（V8的作者还写过V1-V7，分别对应8种不同的语言的虚拟机，神仙）
+2009年Ryan基于V8创建了Node.js
+2010年Isaac基于Node.js写出了npm
+同年TJ受Sinatra启发，发不了Express.js
+至此，Node.js终于能部分取代java、php、C++等后端语言独自运行服务器，但并不能完全代替，以后再谈。
+从此前端工程师可以写后端应用了
+```
+JavaScript的走位
+1. JS有一个标准，相当于谁都能实现、讨论JS，开创了互联网先河。
+2. Gmail也开创了互联网先河，浏览器竟然可以收邮件，以前收邮件都是下载软件的，Gmail正是JS写的。也是JS的正名之作。
+3. 移动端上使用JS很省电，至少比Flash省……
+4. Node.js的出现，使得JS前后端通吃。
