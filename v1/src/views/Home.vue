@@ -1,13 +1,12 @@
 <template>
   <div>
     <Topnav/>
-
     <div class="banner">
       <h1>V1 UI</h1>
       <h2>一个厉害的 UI 框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="https://github.com/gracale/test/blob/main/v1/index.html">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
@@ -40,3 +39,4 @@ export default {
     }
   }
 }
+</style>
