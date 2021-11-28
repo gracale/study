@@ -31,7 +31,6 @@ export default {
     setup() {
       
       const menuVisible = inject<Ref<boolean>>('menuVisible')
-      console.log('Doc aside get menuVisible is '+ menuVisible.value)
       return{menuVisible}
     }
 };
