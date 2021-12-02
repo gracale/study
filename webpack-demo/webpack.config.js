@@ -22,12 +22,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        //use: ["style-loader", "css-loader"] 
-        //写入html
-
-        use: [MiniCssExtractPlugin.loader,"css-loader"],
-        //抽出css 只能二选一
+        test: /\.scss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+        {
+          loader:"sass-loader",
+          options:
+          {
+            implementation:require("dart-sass")
+          }
+        },
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },

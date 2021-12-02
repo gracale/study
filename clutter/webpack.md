@@ -7,6 +7,15 @@ webpack，顾名思义。就是将web相关的文件打包的意思。<br>
 直接去官网抄
 https://webpack.js.org/guides/getting-started/
 
+## 改变JS生成模式
+https://webpack.js.org/configuration/mode/
+```js
+module.exports = {
+  mode: 'development',//开发者模式
+};
+改成production就是用户模式
+```
+
 ## 生成缓存
 其输入和输出都可以在webpack.config.js配置
 也是去官网抄
@@ -59,3 +68,24 @@ https://v4.webpack.js.org/plugins/mini-css-extract-plugin/
 ---
 
 与其说学习webpack，不如说是学习解决问题的思维模式，解决方法很简单就是抄。但想找到抄的地方也不容易，这种思想更为重要。
+
+---
+
+## 引入scss
+接着抄
+https://webpack.js.org/loaders/sass-loader/
+
+官方推荐使用dart-sass
+```
+yarn add sass-loader dart-sass --dev
+```
+
+## 引入图片
+继续抄
+https://v4.webpack.js.org/loaders/file-loader/
+```
+yarn add file-loader --dev
+```
+
+## 懒加载
+用import括号去加载这个文件，然后我会得到一个promise，promise的then前面会写成功之后做什么，后面写失败之后做什么。
