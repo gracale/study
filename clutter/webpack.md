@@ -54,7 +54,7 @@ yarn add webpack-dev-server --dev
 ## css抽取
 抄
 https://v4.webpack.js.org/plugins/mini-css-extract-plugin/
-~~也用不了妈的，以后再玩这功能~~
+
 
 ---
 

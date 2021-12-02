@@ -1,2 +1,2 @@
-import x from './x.js'
+import x from './x.css'
 console.log(x)
