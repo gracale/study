@@ -1,40 +1,40 @@
 <template>
-    <button class="v1-button" :class="classes">
-        <slot />
-    </button>
+  <button class="v1-button" :class="classes" :disabled="disabled">
+    <slot />
+  </button>
 </template>
 <script lang="ts">
 import { computed } from "vue";
 export default {
-    props: {
-        theme: {
-            type: String,
-            default: "button",
-        },
-        size: {
-            type: String,
-            default: "normal",
-        },
-        level: {
-            type: String,
-            default: "normal",
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
+  props: {
+    theme: {
+      type: String,
+      default: "button",
     },
-    setup(props) {
-        const { theme, size, level } = props;
-        const classes = computed(() => {
-            return {
-                [`v1-theme-${theme}`]: theme,
-                [`v1-size-${size}`]: size,
-                [`v1-level-${level}`]: level,
-            }
-        })
-        return { classes };
-    }
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props) {
+    const { theme, size, level } = props;
+    const classes = computed(() => {
+      return {
+        [`v1-theme-${theme}`]: theme,
+        [`v1-size-${size}`]: size,
+        [`v1-level-${level}`]: level,
+      };
+    });
+    return { classes };
+  },
 };
 </script>
 <style lang="scss">
@@ -42,8 +42,9 @@ $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
-$red: red;
 $radius: 4px;
+$red: red;
+$grey: grey;
 .v1-button {
   box-sizing: border-box;
   height: $h;
@@ -148,5 +149,20 @@ $radius: 4px;
       }
     }
   }
+  &.v1-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.v1-theme-link, &.v1-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
 }
-</style> 
+</style>
