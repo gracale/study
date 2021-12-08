@@ -1,6 +1,7 @@
 <template>
 <template v-if="visible">
-  <div class="v1-dialog-overlay" @click="onClickOverlay"></div>
+  <Teleport to="body">
+      <div class="v1-dialog-overlay" @click="onClickOverlay"></div>
   <div class="v1-dialog-wrapper">
     <div class="v1-dialog">
       <header>
@@ -12,10 +13,11 @@
       </main>
       <footer>
         <Button level="main" @click="ok">OK</Button>
-        <Button @click="cancel">Cancel</Button>
+        <Button @click="cancel">Cancel </Button>
       </footer>
     </div>
   </div>
+</Teleport>
 </template>
 </template>
 
