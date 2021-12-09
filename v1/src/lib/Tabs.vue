@@ -23,7 +23,7 @@ import {
     computed,
     ref,
     watchEffect,
-    onMounted
+    onMounted,
 } from 'vue'
 export default {
     props: {
