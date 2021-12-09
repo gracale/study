@@ -1,10 +1,10 @@
 <template>
     <div class="v1-tabs">
         <div class="v1-tabs-nav">
-            <div class=v1-tabs-nav-item v-for="(t,index) in titles" :key="index">{{t}}</div>
+            <div class="v1-tabs-nav-item" v-for="(t,index) in titles" :key="index">{{t}}</div>
         </div>
         <div class="v1-tabs-content">
-            <component v-for="(c,index) in defaults" :is="c" :key="index" />
+            <component class="v1-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" />
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
             }
         })
         const titles = defaults.map((tag) => {
-            console.log(...tag.props.title)
+            return tag.props.title
         });
         return {
             defaults,
