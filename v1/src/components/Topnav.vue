@@ -1,10 +1,10 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleMenu">
+    <router-link to="/" class="logo" @click="toggleMenu">
       <svg class="icon">
         <use xlink:href="#icon-shouye" />
       </svg>
-    </div>
+    </router-link>
     <ul class="menu">
     <li>
       <router-link to ="/doc">文档</router-link>
@@ -43,7 +43,7 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
   > .logo {
