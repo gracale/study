@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { md } from "./plugins/md";
 import * as fs from 'fs'
 import {baseParse} from '@vue/compiler-core'
@@ -18,5 +19,5 @@ export default {
         Component.__sourceCodeTitle = ${JSON.stringify(title)}
       }`.trim()
     }
-  }
+  },
 };
