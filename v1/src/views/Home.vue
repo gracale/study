@@ -18,7 +18,7 @@
           <use xlink:href="#icon-Vue"></use>
         </svg>
         <h3>基于 Vue 3</h3>
-        <p>骄傲地使用了 Vue 3 Composition API</p>
+        <p>使用Vue 3 Composition API</p>
       </li>
       <li>
         <svg>
@@ -69,6 +69,9 @@ $color: #007974;
   >ul {
     display: flex;
     flex-wrap: wrap;
+    @media (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
     >li {
       width: 400px;
       margin: 16px 0;
