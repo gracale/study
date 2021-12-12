@@ -49,7 +49,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$aside-index:10;
+$aside-index: 10;
 .layout {
   display: flex;
   flex-direction: column;
@@ -81,10 +81,6 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
   height: 100%;
   z-index: $aside-index;
 
@@ -94,14 +90,20 @@ aside {
   }
   > ol {
     > li {
-      > a{
+      > a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
       }
-      .router-link-active{
+      .router-link-active {
         background: white;
       }
+    }
+    @media (max-width: 500px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 70px;
     }
   }
 }
