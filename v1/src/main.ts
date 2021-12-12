@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
 import Markdown from './components/Markdown.vue';
+import 'github-markdown-css'
 
 
 const app = createApp(App)
