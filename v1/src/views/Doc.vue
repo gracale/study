@@ -81,9 +81,12 @@ aside {
   background: lightblue;
   width: 150px;
   padding: 16px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
   height: 100%;
   z-index: $aside-index;
-
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
@@ -99,15 +102,15 @@ aside {
         background: white;
       }
     }
-    @media (max-width: 500px) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 70px;
-    }
+  }
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
   }
 }
 main {
   overflow: auto;
 }
-</style> 
+</style>
