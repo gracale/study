@@ -1,16 +1,33 @@
 <template>
-  <span :title="user.username">{{slug}}</span>
+  <span :title="username">{{slug}}</span>
 </template>
 
 <script>
+  import Auth from '@/apis/auth'
+  import Bus from '@/helpers/bus'
 
   export default {
     data() {
       return {
-        user: {
-          username: 'hunger'
-        },
-        slug: 'H'
+          username: '未登录',
+      }
+    },
+
+    created() {
+      Bus.$on('userInfo',user=>{
+        this.username = user.username
+      })
+      
+      Auth.getInfo()
+      .then(res =>{
+        if(res.isLogin){
+          this.username = res.data.username
+        }
+      })
+    },
+    computed:{
+      slug(){
+        return this.username.charAt(0)//获取username的第一个字符
       }
     }
   }
