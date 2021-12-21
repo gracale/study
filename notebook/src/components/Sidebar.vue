@@ -1,6 +1,6 @@
 <template>
   <div id="sidebar">
-    <avatar></avatar>
+    <avatar />
     <div class="icons">
       <router-link to="/note/1" title="笔记"><i class="iconfont icon-note"></i></router-link>
       <router-link to="/notebooks" title="笔记本"><i class="iconfont icon-notebook"></i></router-link>
@@ -16,15 +16,15 @@
 import avatar from '@/components/Avatar'
 import Auth from '@/apis/auth'
   export default {
-    comments:{
+    components:{
       avatar
     },
     methods: {
       logout(){
-        console.log('logout')
-        Auth.logout().then(data=>{
-          console.log(data)
-        })
+        Auth.logout()
+        .then(data=>{
+          this.$router.push({path:'login'})        
+          })
       }
     }
   }  
