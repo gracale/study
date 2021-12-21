@@ -41,6 +41,18 @@
 </template>
 
 <script>
+
+import Auth from '@/apis/auth'
+
+Auth.getInfo().then(data=>{
+    console.log(data)
+})
+//   request('/auth')
+//    .then(data=>{
+//      console.log(data)
+//     })
+
+
 export default {
     data() {
         return {
@@ -83,8 +95,19 @@ export default {
             }
             this.register.isError = false
             this.register.notice = ''
-            console.log(`start register..., username: ${this.register.username} , password: ${this.register.password}`)
-        },
+            console.log(`start register...,
+            username: ${this.register.username} ,
+            password: ${this.register.password}`
+            )
+            Auth.register({
+                username: this.login.username,
+                password: this.login.password
+            }).then(data => {
+                console.log(data)
+                })
+            },
+
+
         onLogin() {
             if (!/^[\w\u4e00-\u9fa5]{3,15}$/.test(this.login.username)) {
                 this.login.isError = true
@@ -99,7 +122,16 @@ export default {
             this.login.isError = false
             this.login.notice = ''
 
-            console.log(`start login..., username: ${this.login.username} , password: ${this.login.password}`)
+            console.log(`start login..., 
+            username: ${this.login.username} , 
+            password: ${this.login.password}`
+            )
+            Auth.login({
+                username: this.login.username,
+                password: this.login.password
+            }).then(data => {
+                console.log(data)
+            })
         }
     }
 
@@ -173,14 +205,15 @@ export default {
             cursor: pointer;
         }
 
-        .login,.register {
+        .login,
+        .register {
             padding: 0px 20px;
             border-top: 1px solid #eee;
-            height:0;
-            overflow:hidden;
-            transition:height .4s;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.4s;
 
-            &.show{
+            &.show {
                 height: 193px;
             }
 
