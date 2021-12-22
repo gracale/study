@@ -56,7 +56,7 @@ export default {
             Notebooks.addNotebook({ title })
             .then(res => {
                 console.log(res)
-                res.data.friendlyDateCreatedAt = friendlyDate(res.data.CreatedAt)
+                res.data.friendlyCreatedAt = friendlyDate(res.data.createdAt)
                 this.notebooks.unshift(res.data) //把数据放在最前面
                 alert(res.msg)
             })
