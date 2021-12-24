@@ -7,7 +7,7 @@
             <div class="layout">
                 <h3>笔记本列表({{notebooks.length}})</h3>
                 <div class="book-list">
-                    <router-link v-for="notebook in notebooks" to="/note/1" class="notebook">
+                    <router-link v-for="notebook in notebooks" :key="notebook" to="/note/1" class="notebook">
                         <div>
                             <span class="iconfont icon-notebook"></span>{{notebook.title}}
                             <span>{{notebook.noteCounts}}</span>
@@ -89,6 +89,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<!-- <style lang="less" scoped>
     @import url(../assets/css/notebook-list.less);
-</style>
+</style> -->
