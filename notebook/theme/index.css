@@ -7682,7 +7682,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
@@ -12012,7 +12012,7 @@
     -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-radio-button__inner.is-round {
       padding: 4px 12px; }
@@ -12676,7 +12676,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -16523,7 +16523,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
@@ -17635,7 +17635,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -19773,7 +19773,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -31127,7 +31127,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
@@ -35389,7 +35389,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -48284,7 +48284,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -51265,7 +51265,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
@@ -52237,7 +52237,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }
@@ -56054,7 +56054,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
@@ -57947,7 +57947,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }

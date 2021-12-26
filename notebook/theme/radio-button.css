@@ -424,7 +424,7 @@
     -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-radio-button__inner.is-round {
       padding: 4px 12px; }

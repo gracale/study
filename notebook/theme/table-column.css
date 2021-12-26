@@ -740,7 +740,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 4px 12px;
-    font-size: 10px;
+    font-size: 500;
     border-radius: 0; }
     .el-checkbox-button__inner.is-round {
       padding: 4px 12px; }

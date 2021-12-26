@@ -690,7 +690,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   padding: 4px 12px;
-  font-size: 10px;
+  font-size: 500;
   border-radius: 4px; }
   .el-button + .el-button {
     margin-left: 10px; }
