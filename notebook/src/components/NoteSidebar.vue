@@ -45,6 +45,8 @@
         })
     },
 
+    props:['curNote'],
+
     data() {
       return {
         notebooks: [],
