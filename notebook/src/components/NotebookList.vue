@@ -27,14 +27,13 @@
 import Auth from '@/apis/auth'
 import Notebooks from '@/apis/notebooks'
 import { friendlyDate } from '@/helpers/util'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 //window.Notebooks = Notebooks
 
 export default {
   data () {
-    return {
-      notebooks: []
-    }
+    return {}
   },
 
   created() {
@@ -45,10 +44,15 @@ export default {
         }
       })
 
-    Notebooks.getAll()
-      .then(res => {
-        this.notebooks = res.data
-      })
+    // Notebooks.getAll()
+    //   .then(res => {
+    //     this.notebooks = res.data
+    //   })
+    this.$store.dispatch('getNotebooks')
+  },
+
+  computed:{
+    ...mapGetters(['notebooks'])
   },
 
   methods: {

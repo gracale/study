@@ -45,7 +45,7 @@
         })
     },
 
-    props:['curNote'],
+      props:['curNote'],
 
     data() {
       return {
