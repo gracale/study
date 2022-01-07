@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+</head>
+<body>
+    <div id="demo">
+        {{text}}<br>
+        {{text.split(',').reverse().join(',')}}<br>
+        <!-- split把字符串转为数组,reverse将数组顺序反转,join将数组转为字符串 -->
+        <!-- 但是逻辑过长,难以维护,所以遇到复杂的逻辑时,应当使用计算属性 -->
+        --------下面是使用计算属性得到的-------<br>
+        {{reverseText}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        //需求,将123,456,789变成789,456,123
+        var app = new Vue({
+            el:'#demo',
+            data:{
+                text:'123,456,789'
+            },
+            //这就是计算属性的定义处
+            computed:{
+                reverseText(){
+                    //this代表这个vue实例
+                    return this.text.split(',').reverse().join(',');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
