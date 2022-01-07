@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="abc">
+        computed姓名是----{{fullName}}
+    </div>
+    <br>
+    <div id="app2">
+        watch姓名是----{{fullName}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#abc',
+            data: {
+                firstName: 'Zhang',
+                LastName: 'San'
+            },
+            computed: {
+                // 计算属性默认用法是getter函数
+                // fullName(){
+                //     return this.firstName+' '+this.LastName
+                // },
+                fullName: {
+                    get() {
+                        return this.firstName + ' ' + this.LastName
+                    },
+                    set(newValue) {
+                        var names = newValue.split(',');//分隔为数组,之间用逗号隔开
+                        this.firstName = names[0];
+                        this.LastName = names[1]
+                    }
+                    //控制台输入app.fullName = 'Li,4'即可调用set
+                }
+            }
+        })
+        let app2 = new Vue({
+            el:'#app2',
+            data:{
+                firstName:'Wang',
+                lastName:'Da',
+                fullName:'Wang Da'
+            },
+            watch:{
+                firstName(value){
+                    this.fullName = value + ' ' + this.lastName
+                },
+                lastName(value){
+                    this.fullName = this.firstName + ' ' + value
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

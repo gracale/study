@@ -13,7 +13,11 @@
         <!-- split把字符串转为数组,reverse将数组顺序反转,join将数组转为字符串 -->
         <!-- 但是逻辑过长,难以维护,所以遇到复杂的逻辑时,应当使用计算属性 -->
         --------下面是使用计算属性得到的-------<br>
-        {{reverseText}}
+        {{reverseText}}<br>
+        计算属性的缓存:<br>
+        {{now}}<br>
+        通过methods拿到的时间戳(想调用methods必须加括号):<br>
+        {{thisTime()}}<br>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script type="text/javascript">
@@ -27,8 +31,18 @@
             computed:{
                 reverseText(){
                     //this代表这个vue实例
+                    //如果计算属性直接跟function,默认为getter函数
                     return this.text.split(',').reverse().join(',');
+                    //split把字符串转为数组,reverse将数组顺序反转,join将数组转为字符串
+                },
+                now(){
+                    return Date.now()
                 }
+            },
+            methods:{
+                thisTime(){
+                    return Date.now()
+                }//输入app.text='555'观察计算和方法的缓存数字
             }
         })
     </script>

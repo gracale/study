@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        {{prices}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var app2 = new Vue({
+            el:'#abc',
+            data:{
+                msg:'我是app2的内容'
+            }
+        })
+        //需求,将123,456,789变成789,456,123
+        var app = new Vue({
+            el:'#demo',
+            data:{
+                //第一个购物车
+                package1:[                    {
+                    name:'iphone',prices:6999,count:2
+                    },
+                    {
+                    name:'ipad',prices:3600,count:1
+                    },
+                ],
+                //第二个购物车
+                package2:[
+                    {
+                    name:'iphone8',prices:6566,count:3
+                    },
+                    {
+                    name:'ipad',prices:3600,count:6
+                    },
+                ],
+            },
+            //这就是计算属性的定义处
+            computed:{
+                prices(){
+                    var prices = 0;
+                    for(var i = 0;i<this.package1.length;i++){
+                        prices += this.package1[i].prices*this.package1[i].count;
+                    }
+                    for(var j = 0;j<this.package2.length;j++){
+                        prices += this.package2[j].prices*this.package2[j].count;
+                    }
+                    return prices+'-------'+app2.msg;
+                    //computed可以访问其他vue实例的的数据
+                }
+            }
+        })
+    </script>
+</body>
+</html>
