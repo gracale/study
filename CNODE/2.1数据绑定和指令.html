@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="app">
+        {{msg}}---文本插值<br>
+        {{1+1}}---还能计算<br>
+        {{6>3?msg:a}}---还能执行单行表达式
+        <!-- 注意 var a =1是两行表达式,其等价于var a;a=1 -->
+    </div>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        let app =new Vue({
+            //el,用于指定页面中已经存在的DOM元素
+            el:"#app",//现与div id=app互相绑定
+            //
+            data:{
+                msg:"vue学习开始了",
+                a:2
+            },
+            created(){
+                alert('我是vue实例,创建完成,还未挂载到DOM')
+            },
+            mounted(){
+                alert('我是vue实例,创建完成,已经挂载到DOM')
+            },
+        });
+        //访问vue实例的属性,需要加dollar
+        console.log(app.$el)
+        console.log(app.$data)
+        //访问data中的属性,不用加
+        console.log(app.msg)
+        console.log(app.a)
+    </script>
+</body>
+</html>
