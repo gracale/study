@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .divStyle{
+            background-color: darkred;
+            width: 100px;
+            height: 100px;
+        }
+        .borderStyle{
+            border: 10px solid blue;
+        }
+        .btnBackground1{
+            background-color: red;
+        }
+        .btnBackground2{
+            background-color: royalblue;
+        }
+        .active{
+            background-color: black;
+            width: 100px;
+            height: 100px;     
+        }
+        .error{
+            border: 10px solid red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    绑定class<br>
+    <div id="app">
+        数组和对象混用,第一个成员是对象,第二个成员是数组成员
+        <div :class="[{'active':isActive,},errorClass]"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        //需求:点击按钮,切换背景颜色为红蓝
+        let app = new Vue({
+            el:'#app',
+            data:{
+                isActive:true,
+                errorClass:'error',
+            },
+        })
+    </script>
+</body>
+</html>
