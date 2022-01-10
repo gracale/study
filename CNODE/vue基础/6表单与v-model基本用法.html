@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        v-model的用法:<br>
+        <hr>
+        input和textarea的用法<br>
+        <input type="text" v-model="value"><br>
+        <!-- 双向绑定:意思是input里的东西会传到data里,然后data -->
+        {{value}}
+        <br>
+        <textarea name="" id="" cols="30" rows="2" v-model="msg">我是多行文本的初始化值</textarea>
+        <!-- 初始插值将无效化 -->
+        <br>{{msg}}
+        <hr>
+        单选框:<br>
+        单个单选框: <br>
+        <!-- 用v-model不生效 -->
+        <input type="radio" name="" :checked="oneradio"><br>
+        多个单选框: <br>
+        <!-- name相同才有单选效果 -->
+        <!-- v-model绑定的是选中的单选框的value值 -->
+        毛蛋<input type="radio" name="egg" value="毛蛋" v-model="checkname">
+        狗蛋<input type="radio" name="egg" value="狗蛋" v-model="checkname">
+        鸡蛋<input type="radio" name="egg" value="鸡蛋" v-model="checkname">
+        <br>{{checkname}}
+        <hr>
+        复选框:
+        单个复选框:
+        <input type="checkbox" :checked="oneradio">
+        <input type="checkbox" v-model="oneradio">
+        <br>
+        多个复选框:复选所以不需要name了
+        <!-- 多个复选框只能绑定数组,如果绑定字符串则会转为布尔,其与所有绑定的复选框的属性对应 -->
+        毛蛋<input type="checkbox" value="毛蛋" v-model="checks">
+        狗蛋<input type="checkbox" value="狗蛋" v-model="checks">
+        鸡蛋<input type="checkbox" value="鸡蛋" v-model="checks">
+        <br>现在选中了{{checks}}
+        <hr>
+        单选下拉框:
+        <select v-model="selected">
+            <option value="毛蛋">毛蛋</option>
+            <option value="狗蛋">狗蛋</option>
+            <option value="鸡蛋">鸡蛋</option>
+        </select>--------现在选中的是:{{selected}}
+        <br><br><br><br>
+        多选下拉框:
+        <select v-model="selectedmul" multiple>
+            <option value="毛蛋">毛蛋</option>
+            <option value="狗蛋">狗蛋</option>
+            <option value="鸡蛋">鸡蛋</option>
+        </select>--------现在选中的是:{{selectedmul}}
+        <hr style="color: red;">
+        绑定值:<br>
+        单选按钮:
+        <!-- 只需要用v-bind给单个单选框绑定一个value值，此时，v-model绑定的就是他的value
+值 -->
+        <input type="radio" v-model="picked" :value="zhi">{{picked}}
+        <hr>
+        需求:选中和不选中的value不一样
+        <br>多选按钮:
+
+        <input type="checkbox" v-model="toggle" :true-value="value1" :false-value="value2"><br>
+        <!-- true-value和false-value是两个固定的名字 -->
+            {{toggle}}<br>
+            选中了:{{toggle === value1}}<br>
+            没选中:{{toggle === value2}}<br>
+            ------------------<br>
+        下拉框:<br>
+        <!-- 在select标签上绑定value值对option无影响 -->
+        <select v-model="valueselect" :value="{num:111}">
+            <option value="毛蛋">毛蛋</option>
+            <option value="狗蛋">狗蛋</option>
+            <option value="鸡蛋">鸡蛋</option>
+        </select>--------现在选中的是:{{typeof valueselect}} ----{{valueselect}}
+        <br>------------------<br>
+        修饰符:<br>
+        输入即渲染:<input type="text" v-model="inputStr">{{inputStr}}<br>
+        失去焦点或回车后渲染:<input type="text" v-model.lazy="lazyStr">{{lazyStr}}<br>
+        数字自动转类型:<input type="text" v-model.number="isNum"><br>
+        {{typeof isNum}}<br>
+        自动去掉两端空格:<input type="text" v-model.trim="trimStr">{{trimStr}}
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                value:'',
+                msg:'',
+                oneradio:true,
+                checkname:'毛蛋',
+                checks:[],
+                selected:'',
+                selectedmul:[],
+                picked:true,
+                zhi:'111',
+                toggle:true,
+                value1:'选中了',
+                value2:'没选中',
+                valueselect:'',
+                inputStr:'',
+                lazyStr:'',
+                isNum:'',
+                trimStr:''
+            }
+        })
+    </script>
+</body>
+</html>
