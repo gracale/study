@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组更新</title>
+</head>
+<body>
+    <div id="app">
+        <div v-for="study in arr">{{study}}</div>
+        <button @click="sortArr">点击排序</button>
+        <button @click="reserveArr">点击反转</button>
+        <hr>
+        <button @click="changOne">改变数组指定项</button>
+        <button @click="changeArrLength">改变数组长度</button>
+        <hr>
+        返回字符串中含有oo的项:
+        {{matchOO}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                arr:['book','pen','pencil','look']
+            },
+            computed:{
+                matchOO(){
+                    //参数代表要过滤的每一项
+                    return this.arr.filter(function(book){
+                        return book.match(/oo/)
+                    })
+                }
+            },
+            methods: {
+                //利用sort方法进行排序
+                sortArr(){
+                    this.arr.sort(function(a,b){
+                        return a.length-b.length;
+                    })
+                },
+                reserveArr(){
+                    this.arr.reverse()
+                },
+                //改变数组的指定项 无效 因为vue检测不到
+                changOne(){
+                    this.arr[0]="car"
+                },
+                //改变数组的长度 无效 因为vue检测不到
+                changeArrLength(){
+                    this.arr.length  = 1
+                }
+            },
+        })
+        //改变vue的第一项(要操作的数组,要更改的值的下标,改变后的值)
+        //Vue.set(app.arr,1,"car")
+
+        //改变数组长度(从哪个下标开始,长度,改变后的值)
+        //如果后两项不写则是下标之后的全删除，即达到改变长度的目的
+        //app.arr.splice(1)
+    </script>
+</body>
+</html>
