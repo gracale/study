@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" style="border: 2px solid chartreuse;">
+        <my-component></my-component>
+        <app-component></app-component>
+
+        table中只能有tr,td,tbody这些元素
+        <!-- <table><my-component></my-component></table> -->
+        实在想挂载需要用is
+        <table>
+            <tbody is="my-component"></tbody>
+        </table>
+    </div>
+    <div id="bpp" style="border: 2px solid indianred;margin-top: 6px;">
+        <my-component></my-component>
+        <app-component></app-component>
+    </div>
+    <!-- 对应的内容:<div id="app"><div>我是一个组件</div></div> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        //注册组件-全局注册
+        //好处,所有的vue实例都可以用
+        //坏处,权限太大,容错率降低
+        Vue.component('my-component',{
+            template:'<div>我是一个组件</div>'
+        })
+
+        var app = new Vue({
+            el:'#app',
+            //局部注册,注意多一个s
+            components:{
+                'app-component':{
+                    template:'<div>我是一个app局部组件</div>'
+                },
+            },
+            data:{
+
+            }
+        })
+        var bpp = new Vue({
+            el:'#bpp',
+        })
+    </script>
+</body>
+</html>
