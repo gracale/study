@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-component my-msg='aa'></my-component>
+        <hr>
+        <input type="text" v-model="d">
+        <type-Component :a="a" :b="b" :c="c" :d="d" :f="f"></type-Component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        Vue.component('myComponent',{
+            props:['myMsg'],
+            template:'<div>{{myMsg}}</div>',
+        })
+        Vue.component('typeComponent',{
+            props:{
+                a:Number,
+                b:[String,Number],
+                //必须是布尔类型,默认是true,
+                c:{
+                    type:Boolean,
+                    default:true
+                },
+                d:{
+                    //如果有写required而且没有在子组件中绑定:d="d" 就会提示下面这行
+                    //Missing required prop: "d"
+                    type:Number,
+                    required:true,
+                },
+                e:{
+                    //数组的default有所不同
+                    //如果没在子组件中绑定:e="e" 就会取默认值
+                    type:Array,
+                    default(){
+                        return[666]
+                    }
+                },
+                f:{
+                    //自定义一个验证函数
+                    validator(value){
+                    return value>10
+                 },
+                 g:{
+                    //验证是否为函数
+                    type:Function
+                 }
+                }
+
+            },
+            template:'<div>{{a}}--{{b}}--{{c}}--{{d}}--{{e[0]}}</div>',
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                a:1,
+                b:666,
+                c:false,
+                d:4546,
+                e:[1,2],
+                f:88,
+                g:console.log('1') 
+            },
+        })
+
+    </script>
+</body>
+</html>
