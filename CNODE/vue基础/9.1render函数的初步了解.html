@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <child :level="level">
+            我是蜡笔小新
+        </child>
+    </div>
+    <!-- <template id="hdom">
+        <div>
+            <h1 v-if="level==1">
+                <slot></slot>
+            </h1>
+            <h2 v-if="level==2">
+                <slot></slot>
+            </h2>
+            <h3 v-if="level==3">
+                <slot></slot>
+            </h3>
+        </div>
+    </template> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+    //使用vue组件定义
+        // Vue.component('child',{
+        //     props:['level'],
+        //     template:'#hdom',
+        // })
+
+    //使用render函数进行定义
+    //50-56行 就能实现27-39 + 42-46行的效果
+    Vue.component('child',{
+        render(createElement) {
+            return createElement('h'+this.level,
+            this.$slots.default)
+        },
+        props:['level'],
+    })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                level:2
+            },
+        })
+    </script>
+</body>
+</html>
