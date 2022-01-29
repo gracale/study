@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <my-component :name="name" @input="showname"></my-component> -->
+        <my-component :name="name" v-model="name"></my-component>
+        <br>{{name}}
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        //需求:点击按钮切换图片
+        
+        Vue.component('my-component',{
+            render(h) {
+                var self = this;//指的就是当前的VUE实例
+                return h('input',{
+                    domProps:{
+                        value: self.name
+                    },
+                    on:{
+                        //on是添加事件的
+                        input(event){
+                            //this.$emit() 此处用this是错的
+                            self.$emit('input',event.target.value)
+                        }
+                    }
+                })
+            },
+            props:['name']
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                name:'JACK'
+            },
+            // methods: {
+            //     showname(value){
+            //         this.name = value
+            //     }
+            // },
+        })
+    </script>
+</body>
+</html>

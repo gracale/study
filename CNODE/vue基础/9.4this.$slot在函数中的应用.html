@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-component>
+            <p>锄禾日当午</p>
+            <p>举头望明月</p>
+            <h3 slot="header">我是标题</h3>
+            <h5 slot="footer">我是最后一段</h5>
+        </my-component>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        //第三个 参数村的就是VNODE
+        Vue.component('my-component',{
+            render(h) {
+                var header = this.$slots.header;//这返回的内容就是含有vnode的数组
+                var main = this.$slots.default;
+                var footer = this.$slots.footer;
+                return h('div',[
+                    h('header',header),
+                    h('main',main),
+                    h('footer',footer),
+                ])
+            },
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+
+            },
+        })
+    </script>
+</body>
+</html>

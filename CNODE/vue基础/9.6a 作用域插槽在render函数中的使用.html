@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-component>
+            <template scope="aaa">
+                <!-- aaa代表从render函数中传递过来的数据 -->
+                {{aaa.text}}
+                {{aaa.msg}}
+            </template>
+        </my-component>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        Vue.component('my-component',{
+            render(h) {
+                //相当于<div><slot :text="text"></slot></div>
+                return h('hiv',this.$scopedSlots.default({
+                    text:"我是子组件传递过来的数据",
+                    msg:'scopetext'
+                }))
+            },
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+
+            },
+        })
+    </script>
+</body>
+</html>

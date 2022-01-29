@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的使用方法</title>
+    <style>
+        #app{
+            border:2px solid black;
+            width: 600px;
+            height: 300px;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 3px;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <child></child>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        Vue.component('child',{
+            //第二个参数可选,第二个参数是对象 只能是Object
+            render(createElement) {
+                return createElement({
+                    template:'<div>我是红色16px</div>'
+                },{
+                    'class':{
+                        foo:true,
+                        baz:false
+                    },
+                    style:{
+                        color:'red',
+                        fontSize:'16px'
+                    },
+                    //正常的html特性
+                    attrs:{
+                        id:'foo',
+                        src:'http://baidu.com'
+                    },
+                    //用来写原生的Dom属性
+                    domProps:{
+                        innerHTML:'<span style="color:blue;font-size:18px">我是蓝色</span>'
+                    }
+                })
+            },
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+
+            },
+        })
+    </script>
+</body>
+</html>
