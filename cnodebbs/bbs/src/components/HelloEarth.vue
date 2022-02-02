@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>HelloEarth</h1>
     <h2>Essential Links</h2>
+    我是传递过来的参数:===<h3>{{$route.params.earthmsg}}</h3>
   <hr>
   </div>
 </template>
