@@ -75,6 +75,12 @@
             this.isLoading = true;
             this.getArticleData();
         },
+        //检测路由变化,若变化则执行getArticleData
+        watch:{
+          '$route'(to,from){
+            this.getArticleData()
+          }
+        }
     }
 </script>
 
