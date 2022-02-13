@@ -5,7 +5,7 @@
         <img src="../assets/loading.gif">
     </div>
     <!-- 代表我们的主题帖子列表 -->
-    <div class="posts">
+    <div class="posts" v-else>
         <ul>
             <li>
                 <div class="toobar">
@@ -33,9 +33,16 @@
                     <span>{{post | tabFormatter}}</span>
                 </span>
                 <!-- 标题 -->
+                <router-link :to="{
+                name:'post_content',
+                params:{
+                  id:post.id
+                }
+                }">
                 <span>
                     {{post.title}}
                 </span>
+                </router-link>
                 <!-- 最终回复时间 -->
                 <span class="last_reply">
                     {{post.last_reply_at | formatDate}}
