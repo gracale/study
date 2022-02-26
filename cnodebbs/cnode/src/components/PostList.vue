@@ -102,12 +102,11 @@
 </script>
 
 <style scoped>
-  .PostList {
+  .PostList{
     background-color: #e1e1e1;
   }
-
   .posts {
-    /* margin-top: 10px; */
+    margin-top: 10px;
   }
 
   .PostList img {
@@ -134,8 +133,7 @@
   }
 
   li:not(:first-child):hover {
-    background: #f5f5f5;
-    ;
+    background: #f5f5f5;;
   }
 
   li:last-child:hover {
@@ -158,8 +156,7 @@
     font-size: 14px;
   }
 
-  .put_good,
-  .put_top {
+  .put_good, .put_top {
     background: #80bd01;
     padding: 2px 4px;
     border-radius: 3px;
