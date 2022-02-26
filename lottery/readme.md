@@ -1,4 +1,4 @@
-源于知乎[web大全](https://zhuanlan.zhihu.com/p/101649778)
+特别感谢知乎[web大全](https://zhuanlan.zhihu.com/p/101649778)
 
 原版是九宫格式抽奖,即方框绕N圈然后停下得出结果.
 
