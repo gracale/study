@@ -46,6 +46,7 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
   > .logo {
     max-width: 6em;
     margin-right: auto;
