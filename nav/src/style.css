@@ -10,7 +10,7 @@ img{
 }
 
 .icon {
-    width: 1em; height: 1em;
+    width: 1.5em; height: 1.5em;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
@@ -116,8 +116,8 @@ body{background-color: #eee;}
 }
 .siteList .site > .close{
     position: absolute;
-    right: 5px;
-    top: 3px;
+    right: 0px;
+    top: 0px;
     display: none;
 }
 

@@ -1,7 +1,7 @@
 const $siteList = $('.siteList')
 const $lastLi = $siteList.find('li.last')
-const x = localStorage.getItem('x')
-const xObject = JSON.parse(x)
+const website = localStorage.getItem('website')
+const xObject = JSON.parse(website)
 const hashMap = xObject || [
     { logo: 'A', logoType: 'text', url: 'https://www.acfun.cn' },
     { logo: 'Y', logoType: 'image', url: 'https://youtube.com' },
@@ -58,7 +58,7 @@ $('.addButton')
 
 window.onbeforeunload = ()=>{
     const string = JSON.stringify(hashMap)
-    localStorage.setItem('x',string)
+    localStorage.setItem('website',string)
 }
 
 $(document).on('keypress',(e)=>{
