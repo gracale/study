@@ -1,1 +1,0 @@
-{"version":3,"sources":["main.js"],"names":["api","jQuery","addClass"],"mappings":"AAAA,IAAMA,GAAG,GAAGC,MAAM,CAAC,OAAD,CAAlB,EAA4B;;AAC5BD,GAAG,CAACE,QAAJ,CAAa,KAAb,GAAoB","file":"main.1f19ae8e.js","sourceRoot":"..\\src","sourcesContent":["const api = jQuery('.test') // 不返回元素们 返回api对象\r\napi.addClass('red') //遍历所有刚才获取的元素，添加，red"]}
